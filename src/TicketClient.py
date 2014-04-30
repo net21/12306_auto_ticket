@@ -533,9 +533,9 @@ class TicketClient:
                 if self.ifUseAutoRandCode:
                     code = '0000'
                     if recongizeEngine == "UU":
-                        r, rcode, codeId = self.onlineUURecongizeRandCode(self.randCodePath,username='kikiworld3',password='45289457',softid='95237',softkey='80c41e2178a04da890f163b44d721669')
+                        r, rcode, codeId = self.onlineUURecongizeRandCode(self.randCodePath,username='username',password='passworld',softid='0',softkey='0')
                     else:
-                        r, rcode, codeId = self.onlineRecongizeRandCode(self.randCodePath,username='kikiworld',password='45289457',softid='281',softkey='e544938cfc3e5a30b6464fb2f6d7c8cc')
+                        r, rcode, codeId = self.onlineRecongizeRandCode(self.randCodePath,username='username',password='password',softid='0',softkey='0')
                     if r:
                         code = rcode
                         recongizeCount += 1
@@ -557,7 +557,7 @@ class TicketClient:
                     print "验证码输入错误并进行错误报告"
                     # 报告识别错误
                     if recongizeEngine == "UU" and codeId != "":
-                        self.onlineUUReportErrorRandCode(codeId,username='kikiworld3',password='45289457',softid='95237',softkey='80c41e2178a04da890f163b44d721669')
+                        self.onlineUUReportErrorRandCode(codeId,username='username',password='password',softid='0',softkey='0')
                         # 退出测试
                 if self.ifUseAutoRandCode and recongizeCount > 2:
                     #机器识别错误超过两次说明验证码比较复杂就更新验证码
